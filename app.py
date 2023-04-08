@@ -33,8 +33,14 @@ def signup():
             return redirect(url_for('signup'))
 
         hashed = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt(14))
-        collection.insert_one({'username': request.form['username'], 'password': hashed,
-                              'email': request.form['email'], 'gender': request.form['gender']})
+        collection.insert_one({'username': request.form['username'], 
+                               'password': hashed,
+                               'email': request.form['email'], 
+                               'gender': request.form['gender'],
+                               'height': request.form['height'],
+                               'weight': request.form['weight'],
+                               'birthdate': request.form['birthdate']                               
+                               })
         return redirect(url_for('signin'))
 
     return render_template('signup.html')
