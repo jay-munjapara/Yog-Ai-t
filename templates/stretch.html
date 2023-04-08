@@ -120,53 +120,94 @@
         <section style="margin: 0; height: 100vh;" id="hero">
             <div class="hero-container" data-aos="fade-in">
                 <!-- <h1>Welcome to YogAit</h1> -->
-                <h2>Press get started to continue.</h2>
+                <h2 class="mt-100">Press get started to continue.</h2>
 
 
                 <!-- <h2>your AI yoga companion &amp; more...</h2> -->
                 <!-- <img src="static/img/YogAit-main.png" alt="Hero Imgs" data-aos="zoom-out" data-aos-delay="100" style="width: 45%;"> -->
-                <div id="app" style="height: 610px;">
+                <div id="app" style="height: 520px;">
                     <div class="container">
-                        <div class="row">
-                            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
-                                <a class="scrollto" href="#learn-section">
-                                    <div class="feature-block">
-                                        <img src="static/img/man-doing-warm-up-exercise-stock.gif" alt="img" />
-                                        <h4>Learn</h4>
-                                        <p>
-                                            Learn a multitude of yoga asanas with proper instructions and illustrations on how to perform them correctly.
-                                        </p>
-                                        read more
-                                    </div>
-                                </a>
+                        <div id="gifGrid">
+                            <div class="gifContainer">
+                                <img src="static/img/stretch/stretch2.gif" class="gif">
+                                <button class="playPause">Play/Pause</button>
                             </div>
-
-                            <div id="practice-section" class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-                                <a href="/compete">
-                                    <div class="feature-block">
-                                        <img src="static/img/practice.png" alt="img" />
-                                        <h4>Compete</h4>
-                                        <p>
-                                            Practice your yoga poses by maximizing your score which will be provided on the basis of the correctness of the yoga pose.
-                                        </p>
-                                        read more
-                                    </div>
-                                </a>
+                            <div class="gifContainer">
+                                <img src="static/img/stretch/stretch6.gif" class="gif">
+                                <button class="playPause">Play/Pause</button>
                             </div>
-
-                            <div id="stretch-section" class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
-                                <a href="stretch">
-                                    <div class="feature-block">
-                                        <img src="static/img/stretch.jpg" alt="img" />
-                                        <h4>Stretch</h4>
-                                        <p>
-                                            Stretching on a regular basis can help you avoid injuries and develop your flexibility, both of which can be useful to you.
-                                        </p>
-                                        read more
-                                    </div>
-                                </a>
+                            <div class="gifContainer">
+                                <img src="static/img/stretch/stretch3.gif" class="gif">
+                                <button class="playPause">Play/Pause</button>
                             </div>
                         </div>
+
+                        <!-- <div id="gifGrid">
+                            <div class="gifContainer">
+                                <img src="static/img/stretch/stretch1.gif" class="gif paused">
+                                <button class="showHide">Show/Hide</button>
+                            </div>
+                            <div class="gifContainer">
+                                <img src="static/img/stretch/stretch2.gif" class="gif paused">
+                                <button class="showHide">Show/Hide</button>
+                            </div>
+                            <div class="gifContainer">
+                                <img src="static/img/stretch/stretch3.gif" class="gif paused">
+                                <button class="showHide">Show/Hide</button>
+                            </div>
+                        </div> -->
+
+
+
+                        <style>
+                            #gifGrid {
+                                display: grid;
+                                grid-template-columns: repeat(3, 1fr);
+                                grid-gap: 10px;
+                            }
+                            
+                            .gif {
+                                width: 100%;
+                                height: auto;
+                            }
+                            
+                            .gifContainer {
+                                position: relative;
+                            }
+                            
+                            .playPause {
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                z-index: 1;
+                            }
+                            
+                            .paused {
+                                animation-play-state: paused;
+                            }
+                        </style>
+
+                        <script>
+                            var showHides = document.querySelectorAll(".showHide");
+                            var gifs = document.querySelectorAll("#gifGrid .gif");
+
+                            showHides.forEach(function(showHide, index) {
+                                gifs[index].src = ""; // Set the initial state of the GIF to hidden
+                                showHide.addEventListener("click", function() {
+                                    if (gifs[index].style.display === "none") {
+                                        // If the GIF is currently hidden, show it
+                                        showHide.innerText = "Hide";
+                                        gifs[index].style.display = "block";
+                                        gifs[index].src = gifs[index].getAttribute("data-src");
+                                    } else {
+                                        // If the GIF is currently shown, hide it
+                                        showHide.innerText = "Show";
+                                        gifs[index].style.display = "none";
+                                        gifs[index].src = "";
+                                    }
+                                });
+                            });
+                        </script>
                     </div>
                     <!-- <img src="{{url_for( 'static', filename='img/stretch.jpeg')}}" alt="Hero Imgs" data-aos="zoom-out" data-aos-delay="100" style="width: 40%;"> -->
                 </div>
