@@ -74,10 +74,10 @@ def signin():
 def learn():
     return render_template('learn.html')
 
+
 @app.route('/compete')
 def practice():
     return render_template('compete.html')
-
 @app.route('/stretch',methods=['GET', 'POST'])
 def stretch():
     if request.method == 'POST':

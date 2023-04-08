@@ -1,6 +1,6 @@
 /**
-* Template Name: YogAit - v4.3.0
-* Template URL: https://bootstrapmade.com/YogAit-bootstrap-landing-page-template/
+* Template Name: Yog-Ai-t - v4.3.0
+* Template URL: https://bootstrapmade.com/Yog-Ai-t-bootstrap-landing-page-template/
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
@@ -505,16 +505,15 @@ span {
     color: #fff;
 }
 
-#hero .yellow{
+#hero .yellow {
     border-color: #FFB347;
     color: #FFB347;
 }
 
-#hero .yellow:hover{
+#hero .yellow:hover {
     background: #FFB347;
     color: #fff;
 }
-
 
 .yoga-get-started {
     font-family: "Roboto", sans-serif;

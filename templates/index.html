@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>YogAit | AI yoga companion</title>
+    <title>Yog-Ai-t | AI yoga companion</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -43,20 +43,16 @@
                 <ul>
                     <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                     <li>
-                        <a class="nav-link scrollto active" href="#learn-section">Learn</a
-                >
-              </li>
-              <!-- <li>
-                <a class="nav-link scrollto active" href="#practice-section"
-                  >practice</a
-                >
-              </li> -->
-              <li>
-              </li>
-              <!-- <li><a class="nav-link scrollto" href="#about-us">About</a></li> -->
-                    <!-- <li><a class="nav-link scrollto" href="#features">Features</a></li> -->
-                    <!-- <li><a class="nav-link scrollto" href="#screenshots">Screenshots</a></li> -->
-                    <!-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
+                        <a class="nav-link scrollto active" href="#learn-section">Learn</a>
+                    </li>
+                    <li>
+                        <a class="nav-link scrollto " href="#compete-section">Compete</a>
+                    </li>
+                    <li>
+                        <a class="nav-link scrollto " href="#stretch-section">Stretch</a>
+                    </li>
+                    <li>
+                    </li>
                     <li><a class="nav-link scrollto" href="/logout">Logout</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -69,13 +65,70 @@
     <!-- ======= Hero Section ======= -->
     <section id="hero">
         <div class="hero-container" data-aos="fade-in">
-            <h1>{% if username: %}{{username}}{% endif %} , Welcome to YogAit</h1>
+            <h1>{% if username: %}{{username}}{% endif %} , Welcome to Yog-Ai-t</h1>
             <h2>Yoga is not about perfection. It's about practice!</h2>
             <!-- <h2>your AI yoga companion &amp; more...</h2> -->
-            <img src="static/img/YogAit-main.png" alt="Hero Imgs" data-aos="zoom-out" data-aos-delay="100" style="width: 45%" />
+            <img src="static/img/yogait-main.png" alt="Hero Imgs" data-aos="zoom-out" data-aos-delay="100" style="width: 45%" />
             <a href="#get-started" class="btn-get-started scrollto">Get Started</a>
         </div>
     </section>
+    <!-- End Hero Section -->
+
+    <main id="main">
+        <!-- ======= Get Started Section ======= -->
+        <section id="get-started" class="padd-section text-center">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title text-center">
+                    <h2>What you wanna do??</h2>
+                    <p class="separator">Choose as per you mood...</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+                        <a class="scrollto" href="#learn-section">
+                            <div class="feature-block">
+                                <img src="static/img/learn.png" alt="img" />
+                                <h4>Learn</h4>
+                                <p>
+                                    Learn a multitude of yoga asanas with proper instructions and illustrations on how to perform them correctly.
+                                </p>
+                                read more
+                            </div>
+                        </a>
+                    </div>
+
+                    <div id="practice-section" class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                        <a href="/compete">
+                            <div class="feature-block">
+                                <img src="static/img/practice.png" alt="img" />
+                                <h4>Compete</h4>
+                                <p>
+                                    Practice your yoga poses by maximizing your score which will be provided on the basis of the correctness of the yoga pose.
+                                </p>
+                                read more
+                            </div>
+                        </a>
+                    </div>
+
+                    <div id="stretch-section" class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+                        <a href="stretch">
+                            <div class="feature-block">
+                                <img src="static/img/stretch.jpg" alt="img" />
+                                <h4>Stretch</h4>
+                                <p>
+                                    Stretching on a regular basis can help you avoid injuries and develop your flexibility, both of which can be useful to you.
+                                </p>
+                                read more
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Get Started Section -->
+    </main>
     <section id="learn-section" class="padd-section text-center">
 
         <div class="container" data-aos="fade-up">
@@ -104,7 +157,8 @@
                             </div>
                         </div>
                         <h4 style="color: #fff;">creative design</h4>
-                        <p style="color: #fff;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        <p style="color: #fff;">Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                        </p>
                     </div>
                 </div>
 
@@ -116,7 +170,8 @@
                                     <img src="{{url_for( 'static', filename='img/yoga_poses/bhujangasana.jpg' )}} " style="width:300px;height:300px; ">
                                 </div>
                                 <div class="flip-card-back ">
-                                    <span style="font-size: 20px; ">Benefits: This pose is therapeutic for asthma.</span>
+                                    <span style="font-size: 20px; ">Benefits: This pose is therapeutic for
+                                        asthma.</span>
                                     <div>
                                         <a href="/" class="yoga-get-started">Get Started</a>
                                     </div>
@@ -124,7 +179,8 @@
                             </div>
                         </div>
                         <h4 style="color: #fff;">Retina Ready</h4>
-                        <p style="color: #fff;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        <p style="color: #fff;">Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                        </p>
                     </div>
                 </div>
 
@@ -144,7 +200,8 @@
                             </div>
                         </div>
                         <h4 style="color: #fff;">easy to use</h4>
-                        <p style="color: #fff;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        <p style="color: #fff;">Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                        </p>
                     </div>
                 </div>
 
@@ -156,7 +213,8 @@
                                     <img src="{{url_for( 'static', filename='img/yoga_poses/pashchimottanasana.jpg' )}} " style="width:300px;height:300px; ">
                                 </div>
                                 <div class="flip-card-back ">
-                                    <span style="font-size: 20px; ">Benefits: This pose helps with relieving the symptoms of menopause and menstrual discomfort.</span>
+                                    <span style="font-size: 20px; ">Benefits: This pose helps with relieving the
+                                        symptoms of menopause and menstrual discomfort.</span>
                                     <div>
                                         <a href="/" class="yoga-get-started">Get Started</a>
                                     </div>
@@ -164,7 +222,8 @@
                             </div>
                         </div>
                         <h4 style="color: #fff;">Free Updates</h4>
-                        <p style="color: #fff;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        <p style="color: #fff;">Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                        </p>
                     </div>
                 </div>
 
@@ -185,7 +244,8 @@
                             </div>
                         </div>
                         <h4 style="color: #fff;">Free Updates</h4>
-                        <p style="color: #fff;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        <p style="color: #fff;">Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                        </p>
                     </div>
                 </div>
 
@@ -197,7 +257,8 @@
                                     <img src="{{url_for( 'static', filename='img/yoga_poses/pavanmuktasana.jpg' )}} " style="width:300px;height:300px; ">
                                 </div>
                                 <div class="flip-card-back ">
-                                    <span style="font-size: 20px; ">Benefits: This pose improves your digestive system.</span>
+                                    <span style="font-size: 20px; ">Benefits: This pose improves your digestive
+                                        system.</span>
                                     <div>
                                         <a href="/" class="yoga-get-started">Get Started</a>
                                     </div>
@@ -205,7 +266,8 @@
                             </div>
                         </div>
                         <h4 style="color: #fff;">App store support</h4>
-                        <p style="color: #fff;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        <p style="color: #fff;">Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                        </p>
                     </div>
                 </div>
 
@@ -217,7 +279,8 @@
                                     <img src="{{url_for( 'static', filename='img/yoga_poses/trikonasana.jpg' )}} " style="width:300px;height:300px; ">
                                 </div>
                                 <div class="flip-card-back ">
-                                    <span style="font-size: 20px; ">Benefits: This pose stimulates function of reducing stress.</span>
+                                    <span style="font-size: 20px; ">Benefits: This pose stimulates function of reducing
+                                        stress.</span>
                                     <div>
                                         <a href="/" class="yoga-get-started">Get Started</a>
                                     </div>
@@ -225,7 +288,8 @@
                             </div>
                         </div>
                         <h4 style="color: #fff;">Perfect Pixel</h4>
-                        <p style="color: #fff;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        <p style="color: #fff;">Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                        </p>
                     </div>
                 </div>
 
@@ -246,7 +310,8 @@
                             </div>
                         </div>
                         <h4 style="color: #fff;">clean codes</h4>
-                        <p style="color: #fff;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        <p style="color: #fff;">Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                        </p>
                     </div>
                 </div>
 
@@ -267,7 +332,8 @@
                             </div>
                         </div>
                         <h4 style="color: #fff;">Perfect Pixel</h4>
-                        <p style="color: #fff;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        <p style="color: #fff;">Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                        </p>
                     </div>
                 </div>
 
@@ -288,7 +354,8 @@
                             </div>
                         </div>
                         <h4 style="color: #fff;">Perfect Pixel</h4>
-                        <p style="color: #fff;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        <p style="color: #fff;">Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                        </p>
                     </div>
                 </div>
 
@@ -309,7 +376,8 @@
                             </div>
                         </div>
                         <h4 style="color: #fff;">Perfect Pixel</h4>
-                        <p style="color: #fff;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        <p style="color: #fff;">Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                        </p>
                     </div>
                 </div>
 
@@ -330,7 +398,8 @@
                             </div>
                         </div>
                         <h4 style="color: #fff;">Perfect Pixel</h4>
-                        <p style="color: #fff;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        <p style="color: #fff;">Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                        </p>
                     </div>
                 </div>
 
@@ -354,7 +423,7 @@
                 <div class="col-md-12 col-lg-4 ">
                     <div class="footer-logo ">
 
-                        <a class="navbar-brand " href="# ">YogAit</a>
+                        <a class="navbar-brand " href="# ">Yog-Ai-t</a>
                         <p>Yoga is not about perfection. It’s about practice!</p>
 
                     </div>
@@ -425,14 +494,8 @@
 
         <div class="copyrights ">
             <div class="container ">
-                <p>&copy; Copyrights YogAit. All rights reserved.</p>
+                <p>&copy; Copyrights Yog-Ai-t. All rights reserved.</p>
                 <div class="credits ">
-                    <!--
-          All the links in the footer should remain intact.
-          You can delete the links only if you purchased the pro version.
-          Licensing information: https://bootstrapmade.com/license/
-          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=YogAit
-        -->
                     Designed by <a href="https://bootstrapmade.com/ ">BootstrapMade</a>
                 </div>
             </div>

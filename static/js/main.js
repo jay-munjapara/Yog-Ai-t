@@ -1,6 +1,6 @@
 /**
- * Template Name: YogAit - v4.3.0
- * Template URL: https://bootstrapmade.com/YogAit-bootstrap-landing-page-template/
+ * Template Name: Yog-Ai-t - v4.3.0
+ * Template URL: https://bootstrapmade.com/Yog-Ai-t-bootstrap-landing-page-template/
  * Author: BootstrapMade.com
  * License: https://bootstrapmade.com/license/
  */
