@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>YogAit | AI yoga companion</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+
+  <!-- Favicons -->
+  <link href="static/img/favicon.png" rel="icon" />
+  <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i"
+    rel="stylesheet" />
+
+  <!-- Vendor CSS Files -->
+  <link href="static/vendor/aos/aos.css" rel="stylesheet" />
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+  <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+  <!-- Template Main CSS File -->
+  <link href="static/css/style.css" rel="stylesheet" />
+</head>
+{% if value %}
+<body onload='myFunction()'>
+{% else %}
+<body>
+{% endif %}
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div id="logo">
+        <h1><a href="/">Yog<span>Ai</span>t</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="static/img/logo.png" alt="" title="" /></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="#hero">Home</a></li>
+          <li>
+            <a class="nav-link scrollto" href="#learn-section">Learn</a>
+          </li>
+          <!-- <li>
+            <a class="nav-link scrollto" href="#practice-section">practice</a>
+          </li> -->
+          <li>
+            <a class="nav-link scrollto active" href="meditate">meditate</a>
+          </li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <!-- .navbar -->
+    </div>
+  </header>
+  <!-- End Header -->
+  <style>
+    .base-timer {
+      position: relative;
+      width: 300px;
+      height: 300px;
+    }
+
+    .base-timer__svg {
+      transform: scaleX(-1);
+    }
+
+    .base-timer__circle {
+      fill: none;
+      stroke: none;
+    }
+
+    .base-timer__path-elapsed {
+      stroke-width: 7px;
+      stroke: grey;
+    }
+
+    .base-timer__path-remaining {
+      stroke-width: 7px;
+      stroke-linecap: round;
+      transform: rotate(90deg);
+      transform-origin: center;
+      transition: 1s linear all;
+      fill-rule: nonzero;
+      stroke: currentColor;
+    }
+
+    .base-timer__path-remaining.green {
+      color: rgb(65, 184, 131);
+    }
+
+    .base-timer__path-remaining.orange {
+      color: orange;
+    }
+
+    .base-timer__path-remaining.red {
+      color: red;
+    }
+
+    .base-timer__label {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+    }
+  </style>
+  <section style="margin: 0; height: 100vh;" id="hero">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>Welcome to YogAit</h1>
+      <h2>Press get started to continue.</h2>
+      <!-- <h2>your AI yoga companion &amp; more...</h2> -->
+      <!-- <img src="static/img/YogAit-main.png" alt="Hero Imgs" data-aos="zoom-out" data-aos-delay="100" style="width: 45%;"> -->
+      <div id="app" style="height: 410px;">
+
+        <img src="{{url_for( 'static', filename='img/meditate_aunty.png')}}" alt="Hero Imgs" data-aos="zoom-out"
+          data-aos-delay="100" style="width: 40%;">
+      </div>
+      <form action="meditate" method="post">
+        <label for="timerInterval">Time interval:</label>
+        <input class="btn-get-started" list="time" name="timerInterval" id="timerInterval">
+        <datalist id="time">
+          <option value="02:00 mins">
+          <option value="03:00 mins">
+          <option value="04:00 mins">
+          <option value="05:00 mins">
+        </datalist>
+        <input type="submit" value="Get started" href="#get-started" class="btn-get-started scrollto">
+      </form>
+      {% if value %}
+      <a href="meditate" onclick="onTimesUp()" class="btn-get-started yellow scrollto">Stop</a>
+      {% endif %}
+      <a  style="visibility: hidden;" href="meditate" onclick="onTimesUp()" class="btn-get-started yellow scrollto">Stop</a>
+
+    </div>
+  </section>
+  <!-- End Hero Section -->
+
+  <!-- Vendor JS Files -->
+  <script src="static/vendor/aos/aos.js "></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js "></script>
+  <script src="static/vendor/glightbox/js/glightbox.min.js "></script>
+  <script src="static/vendor/php-email-form/validate.js "></script>
+  <script src="static/vendor/swiper/swiper-bundle.min.js "></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/js/main.js "></script>
+
+  <script>
+    const FULL_DASH_ARRAY = 283;
+    const WARNING_THRESHOLD = 10;
+    const ALERT_THRESHOLD = 5;
+
+    const COLOR_CODES = {
+      info: {
+        color: "green",
+      },
+      warning: {
+        color: "orange",
+        threshold: WARNING_THRESHOLD,
+      },
+      alert: {
+        color: "red",
+        threshold: ALERT_THRESHOLD,
+      },
+    };
+    {% if value %}
+    const TIME_LIMIT = 60 * {{value[1:2]}};
+    {% endif %}
+    let timePassed = 0;
+    let timeLeft = TIME_LIMIT;
+    let timerInterval = null;
+    let remainingPathColor = COLOR_CODES.info.color;
+
+    function myFunction() {
+      startTimer();
+      document.getElementById("app").innerHTML = `
+<div class="base-timer">
+  <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <g class="base-timer__circle">
+      <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+      <path
+        id="base-timer-path-remaining"
+        stroke-dasharray="283"
+        class="base-timer__path-remaining ${remainingPathColor}"
+        d="
+          M 50, 50
+          m -45, 0
+          a 45,45 0 1,0 90,0
+          a 45,45 0 1,0 -90,0
+        "
+      ></path>
+    </g>
+  </svg>
+  <span id="base-timer-label" class="base-timer__label">${formatTime(
+        timeLeft
+      )}</span>
+</div>
+<audio src="static/music/om.mp3" autoplay></audio>
+`;
+    }
+    function onTimesUp() {
+      clearInterval(timerInterval);
+    }
+
+    function startTimer() {
+      timerInterval = setInterval(() => {
+        timePassed = timePassed += 1;
+        timeLeft = TIME_LIMIT - timePassed;
+        document.getElementById("base-timer-label").innerHTML =
+          formatTime(timeLeft);
+        setCircleDasharray();
+        setRemainingPathColor(timeLeft);
+
+        if (timeLeft === 0) {
+          onTimesUp();
+        }
+      }, 1000);
+    }
+
+    function formatTime(time) {
+      const minutes = Math.floor(time / 60);
+      let seconds = time % 60;
+
+      if (seconds < 10) {
+        seconds = `0${seconds}`;
+      }
+
+      return `${minutes}:${seconds}`;
+    }
+
+    function setRemainingPathColor(timeLeft) {
+      const { alert, warning, info } = COLOR_CODES;
+      if (timeLeft <= alert.threshold) {
+        document
+          .getElementById("base-timer-path-remaining")
+          .classList.remove(warning.color);
+        document
+          .getElementById("base-timer-path-remaining")
+          .classList.add(alert.color);
+      } else if (timeLeft <= warning.threshold) {
+        document
+          .getElementById("base-timer-path-remaining")
+          .classList.remove(info.color);
+        document
+          .getElementById("base-timer-path-remaining")
+          .classList.add(warning.color);
+      }
+    }
+
+    function calculateTimeFraction() {
+      const rawTimeFraction = timeLeft / TIME_LIMIT;
+      return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
+    }
+
+    function setCircleDasharray() {
+      const circleDasharray = `${(
+        calculateTimeFraction() * FULL_DASH_ARRAY
+      ).toFixed(0)} 283`;
+      document
+        .getElementById("base-timer-path-remaining")
+        .setAttribute("stroke-dasharray", circleDasharray);
+    }
+  </script>
+</body>
+
+</html>
